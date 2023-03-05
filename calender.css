@@ -1,0 +1,61 @@
+table.calender {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+caption.cal-title {
+    font-size: 5rem;
+}
+
+table.calender, table.calender th, table.calender td {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid white;
+}
+
+table.calender th, table.calender td {
+    padding: 0.5rem;
+}
+
+table.calender th {
+    font-weight: bold;
+}
+
+table.calender td {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+table.calender td#todays-day {
+    font-weight: bold;
+    color: rgb(36, 185, 36);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+table.calender td.pre-sub-cal-day {
+    color: rgb(146, 146, 146);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+table.calender div.activity {
+    margin-top: 0.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid #fff;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+}
+
+section#statistics {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid #fff;
+    padding: 0.75rem;
+}
+
+section#statistics h1 {
+    font-size: 2.5rem;
+}
+
+section#statistics ul {
+    padding-left: 0.3rem;
+    list-style-position: inside;
+}
