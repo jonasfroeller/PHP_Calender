@@ -38,11 +38,6 @@
             $arr[] = array_combine($key, $row);
         }
 
-        /* foreach ($arr as &$item) {
-            $item["Start Date Time"] = "{$item["Start Date"]} {$item["Start Time"]}";
-            $item["End Date Time"] = "{$item["End Date"]} {$item["End Time"]}";
-        } */
-
         // release file handle
         fclose($file);
 
@@ -67,7 +62,8 @@
 
     <main>
         <table class="calender">
-            <caption class="cal-title"><?php echo $month_and_year; ?>
+            <caption class="cal-title">
+                <?php echo $month_and_year; ?>
             </caption>
             <thead>
                 <tr>
@@ -97,7 +93,7 @@
                     $eventData = "";
                     if (date("dmY", $cal_today_timestamp) == date("dmY", $eventDate)) {
                         $eventData .= "<div class='activity' data-allday='" . $event['All day event'] . "' data-reminder='" . $event['Reminder on/off'] . "' data-reminderDateTime='" . $event['Reminder Date'] . " " . $event['Reminder Time'] . "' data-categories='" . $event['Categories'] . "' data-private='" . $event['Private'] . "'>" .
-                            "<strong>" . $event["Subject"] . "</strong>" . "<br>" . $event["Start Time"] . "-" . $event["End Time"] . ($event["Description"] != "" ? "<br>" . $event["Description"] : "") . ($event["Location"] != "" ? "<br>" . $event["Location"] : "") .  "</div>";
+                            "<strong>" . $event["Subject"] . "</strong>" . "<br>" . $event["Start Time"] . "-" . $event["End Time"] . ($event["Description"] != "" ? "<br><em>" . $event["Description"] . "</em>" : "") . ($event["Location"] != "" ? "<br>(" . $event["Location"] . ")" : "") .  "</div>";
                         statisticUpdate($statistics, $event["Subject"]);
                     }
                     return $eventData;
@@ -132,17 +128,14 @@
                 ?>
             </tbody>
         </table>
-
         <section id="statistics">
             <h1>Statistics</h1>
 
             <?php
             echo "<ul>";
-            foreach ($statistics as $stat) {
-                $properties = get_object_vars($statistics);
-                foreach ($properties as $propertyName => $propertyValue) {
-                    echo "<li>" .  $propertyName . ": " . $propertyValue . "</li>";
-                }
+            $properties = get_object_vars($statistics);
+            foreach ($properties as $propertyName => $propertyValue) {
+                echo "<li>" .  $propertyName . ": " . $propertyValue . "</li>";
             }
             echo "</ul>";
             ?>

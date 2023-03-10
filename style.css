@@ -12,8 +12,6 @@ html {
 body {
     display: flex;
     justify-content: center;
-    max-width: calc(100vw - 1rem);
-    max-width: calc(100dvw - 1rem);
     margin-left: 1rem;
     margin-right: 1rem;
     scroll-behavior: smooth;
@@ -47,9 +45,14 @@ strong {
     font-weight: bold;
 }
 
+em {
+    font-style: italic;
+}
+
 main {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    min-width: 28rem;
+    min-width: min(28rem, 90vw);
+    overflow-x: auto;
 }

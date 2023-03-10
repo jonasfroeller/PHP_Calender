@@ -27,7 +27,6 @@ table.calender td {
 }
 
 table.calender td#todays-day {
-    font-weight: bold;
     color: rgb(36, 185, 36);
     background-color: rgba(0, 0, 0, 0.4);
 }
@@ -46,9 +45,11 @@ table.calender div.activity {
 }
 
 section#statistics {
+    word-break: break-all;
     background-color: rgba(0, 0, 0, 0.4);
     border: 1px solid #fff;
     padding: 0.75rem;
+    width: 100%;
 }
 
 section#statistics h1 {
